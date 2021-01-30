@@ -1,0 +1,38 @@
+{
+    "name": "nellyt/idgb-api-sdk",
+    "description": "Library for interfacing with the IGDB API",
+    "keywords": [
+        "php",
+        "idgb",
+        "sdk"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Niall Tiernan",
+            "email": "nialltiernan93@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "lukasoppermann/http-status": "^3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Igdb\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Igdb\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit tests"
+    }
+}
