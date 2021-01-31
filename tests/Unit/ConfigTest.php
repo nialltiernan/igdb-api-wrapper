@@ -11,10 +11,10 @@ class ConfigTest extends Base
     /** @test */
     public function init()
     {
-        $config = new Config(self::CLIENT_ID, self::ACCESS_TOKEN);
+        $config = new Config($this->credentials->getClientId(), $this->credentials->getAccessToken());
 
-        $this->assertEquals(self::CLIENT_ID, $config->getClientId());
-        $this->assertEquals(sprintf('Bearer %s', self::ACCESS_TOKEN), $config->getAuthorization());
+        $this->assertEquals($this->credentials->getClientId(), $config->getClientId());
+        $this->assertEquals(sprintf('Bearer %s', $this->credentials->getAccessToken()), $config->getAuthorization());
         $this->assertEquals('https://api.igdb.com/v4/', $config->getBaseUrl());
     }
 }
