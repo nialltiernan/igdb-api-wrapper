@@ -6,12 +6,12 @@ namespace Igdb\Tests\Unit\Resources;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
-class AgeRatingTest extends Base
+class ArtworkTest extends Base
 {
     /** @test */
     public function fetch()
     {
-        $response = $this->client->ageRatings()->fetch();
+        $response = $this->client->artwork()->fetch();
         $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
 
         $data = $response->getData();
@@ -21,24 +21,24 @@ class AgeRatingTest extends Base
     /** @test */
     public function fields()
     {
-        $data = $this->client->ageRatings()->fetch('fields checksum, category;')->getData();
+        $data = $this->client->artwork()->fetch('fields checksum, game;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
-            $this->assertArrayHasKey('category', $datum);
+            $this->assertArrayHasKey('game', $datum);
         }
     }
 
     /** @test */
     public function where()
     {
-        $data = $this->client->ageRatings()->fetch('where id = (22474, 21120);')->getData();
-        $this->assertEquals([['id' => 21120], ['id' => 22474]], $data);
+        $data = $this->client->artwork()->fetch('where id = (5305, 5307);')->getData();
+        $this->assertEquals([['id' => 5305], ['id' => 5307]], $data);
     }
 
     /** @test */
     public function limit()
     {
-        $this->assertCount(2, $this->client->ageRatings()->fetch('limit 2;')->getData());
+        $this->assertCount(2, $this->client->artwork()->fetch('limit 2;')->getData());
     }
 }

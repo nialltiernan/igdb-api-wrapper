@@ -6,12 +6,12 @@ namespace Igdb\Tests\Unit\Resources;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
-class AgeRatingTest extends Base
+class AlternativeNamesTest extends Base
 {
     /** @test */
     public function fetch()
     {
-        $response = $this->client->ageRatings()->fetch();
+        $response = $this->client->alternativeNames()->fetch();
         $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
 
         $data = $response->getData();
@@ -21,19 +21,19 @@ class AgeRatingTest extends Base
     /** @test */
     public function fields()
     {
-        $data = $this->client->ageRatings()->fetch('fields checksum, category;')->getData();
+        $data = $this->client->alternativeNames()->fetch('fields checksum, name;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
-            $this->assertArrayHasKey('category', $datum);
+            $this->assertArrayHasKey('name', $datum);
         }
     }
 
     /** @test */
     public function where()
     {
-        $data = $this->client->ageRatings()->fetch('where id = (22474, 21120);')->getData();
-        $this->assertEquals([['id' => 21120], ['id' => 22474]], $data);
+        $data = $this->client->alternativeNames()->fetch('where id = (12964, 39844);')->getData();
+        $this->assertEquals([['id' => 12964], ['id' => 39844]], $data);
     }
 
     /** @test */
