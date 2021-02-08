@@ -48,10 +48,10 @@ class ApiClient
     private Config $config;
     private HttpClient $httpClient;
 
-    public function __construct(Config $config, HttpClient $mockedHttpClient = null)
+    public function __construct(Config $config, HttpClient $mockHttpClient = null)
     {
         $this->config = $config;
-        $this->httpClient = $mockedHttpClient ?? new HttpClient();
+        $this->httpClient = $mockHttpClient ?? new HttpClient();
     }
 
     public function ageRatingsContentDescriptions(): AgeRatingContentDescriptionResource

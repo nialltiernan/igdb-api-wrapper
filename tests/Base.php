@@ -5,7 +5,7 @@ namespace Igdb\Tests;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as HttpClient;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
@@ -40,16 +40,26 @@ class Base extends TestCase
         return new ApiClient($config);
     }
 
-    protected function getMockedHttpClient(string $resource, string $function): Client
+    protected function getMockedHttpClient(string $resource, string $function): HttpClient
     {
-        $path = sprintf('%s/Data/Resources/%s/%s.json', __DIR__, $resource, $function);
-
-        $mock = new MockHandler(
-            [new Response(Status::HTTP_OK, ['Content-Type' => 'application/json'], file_get_contents($path))]
-        );
+        $mock = new MockHandler([$this->getMockResponse($resource, $function)]);
 
         $handlerStack = HandlerStack::create($mock);
 
-        return new Client(['handler' => $handlerStack]);
+        return new HttpClient(['handler' => $handlerStack]);
+    }
+
+    private function getMockResponse(string $resource, string $function): Response
+    {
+        return new Response(
+            Status::HTTP_OK,
+            ['Content-Type' => 'application/json'],
+            $this->getMockResponseBody($resource, $function)
+        );
+    }
+
+    private function getMockResponseBody(string $resource, string $function): string
+    {
+        return file_get_contents(sprintf('%s/Data/Resources/%s/%s.json', __DIR__, $resource, $function));
     }
 }
