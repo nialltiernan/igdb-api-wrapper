@@ -124,17 +124,17 @@ class ApiClient
         return new GameEngineLogoResource($this->config, $this->httpClient);
     }
 
-    public function gameEngine(): GameEngineResource
+    public function gameEngines(): GameEngineResource
     {
         return new GameEngineResource($this->config, $this->httpClient);
     }
 
-    public function gameMode(): GameModeResource
+    public function gameModes(): GameModeResource
     {
         return new GameModeResource($this->config, $this->httpClient);
     }
 
-    public function game(): GameResource
+    public function games(): GameResource
     {
         return new GameResource($this->config, $this->httpClient);
     }
@@ -149,7 +149,7 @@ class ApiClient
         return new GameVersionFeatureValueResource($this->config, $this->httpClient);
     }
 
-    public function gameVersion(): GameVersionResource
+    public function gameVersions(): GameVersionResource
     {
         return new GameVersionResource($this->config, $this->httpClient);
     }
@@ -179,7 +179,7 @@ class ApiClient
         return new MultiplayerModeResource($this->config, $this->httpClient);
     }
 
-    public function platformFamily(): PlatformFamilyResource
+    public function platformFamilies(): PlatformFamilyResource
     {
         return new PlatformFamilyResource($this->config, $this->httpClient);
     }
@@ -199,27 +199,27 @@ class ApiClient
         return new PlatformVersionCompanyResource($this->config, $this->httpClient);
     }
 
-    public function platformVersionReleaseDate(): PlatformVersionReleaseDateResource
+    public function platformVersionReleaseDates(): PlatformVersionReleaseDateResource
     {
         return new PlatformVersionReleaseDateResource($this->config, $this->httpClient);
     }
 
-    public function platformVersion(): PlatformVersionResource
+    public function platformVersions(): PlatformVersionResource
     {
         return new PlatformVersionResource($this->config, $this->httpClient);
     }
 
-    public function platformWebsite(): PlatformWebsiteResource
+    public function platformWebsites(): PlatformWebsiteResource
     {
         return new PlatformWebsiteResource($this->config, $this->httpClient);
     }
 
-    public function playerPerspective(): PlayerPerspectiveResource
+    public function playerPerspectives(): PlayerPerspectiveResource
     {
         return new PlayerPerspectiveResource($this->config, $this->httpClient);
     }
 
-    public function releaseDate(): ReleaseDateResource
+    public function releaseDates(): ReleaseDateResource
     {
         return new ReleaseDateResource($this->config, $this->httpClient);
     }

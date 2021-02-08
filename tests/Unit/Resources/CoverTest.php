@@ -7,16 +7,16 @@ use Igdb\ApiClient;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
-class CharacterMugShotTest extends Base
+class CoverTest extends Base
 {
-    private const RESOURCE = 'CharacterMugShot';
+    private const RESOURCE = 'Cover';
 
     /** @test */
     public function fetch()
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $response = $client->characterMugShots()->fetch();
+        $response = $client->covers()->fetch();
         $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
 
         $data = $response->getData();
@@ -28,7 +28,7 @@ class CharacterMugShotTest extends Base
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $data = $client->characterMugShots()->fetch('fields checksum, url;')->getData();
+        $data = $client->covers()->fetch('fields checksum, url;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
@@ -41,9 +41,9 @@ class CharacterMugShotTest extends Base
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $data = $client->characterMugShots()->fetch('where id = (94, 95);')->getData();
+        $data = $client->covers()->fetch('where id = (30, 31);')->getData();
 
-        $this->assertEquals([['id' => 94], ['id' => 95]], $data);
+        $this->assertEquals([['id' => 30], ['id' => 31]], $data);
     }
 
     /** @test */
@@ -51,6 +51,6 @@ class CharacterMugShotTest extends Base
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $this->assertCount(2, $client->characterMugShots()->fetch('limit 2;')->getData());
+        $this->assertCount(2, $client->covers()->fetch('limit 2;')->getData());
     }
 }

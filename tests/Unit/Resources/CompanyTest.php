@@ -7,16 +7,16 @@ use Igdb\ApiClient;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
-class CharacterMugShotTest extends Base
+class CompanyTest extends Base
 {
-    private const RESOURCE = 'CharacterMugShot';
+    private const RESOURCE = 'Company';
 
     /** @test */
     public function fetch()
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $response = $client->characterMugShots()->fetch();
+        $response = $client->companies()->fetch();
         $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
 
         $data = $response->getData();
@@ -28,11 +28,11 @@ class CharacterMugShotTest extends Base
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $data = $client->characterMugShots()->fetch('fields checksum, url;')->getData();
+        $data = $client->companies()->fetch('fields checksum, name;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
-            $this->assertArrayHasKey('url', $datum);
+            $this->assertArrayHasKey('name', $datum);
         }
     }
 
@@ -41,9 +41,9 @@ class CharacterMugShotTest extends Base
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $data = $client->characterMugShots()->fetch('where id = (94, 95);')->getData();
+        $data = $client->companies()->fetch('where id = (80, 90);')->getData();
 
-        $this->assertEquals([['id' => 94], ['id' => 95]], $data);
+        $this->assertEquals([['id' => 80], ['id' => 90]], $data);
     }
 
     /** @test */
@@ -51,6 +51,6 @@ class CharacterMugShotTest extends Base
     {
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
-        $this->assertCount(2, $client->characterMugShots()->fetch('limit 2;')->getData());
+        $this->assertCount(2, $client->companies()->fetch('limit 2;')->getData());
     }
 }
