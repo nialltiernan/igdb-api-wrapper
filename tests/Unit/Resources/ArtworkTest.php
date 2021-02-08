@@ -3,15 +3,20 @@ declare(strict_types=1);
 
 namespace Igdb\Tests\Unit\Resources;
 
+use Igdb\ApiClient;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
 class ArtworkTest extends Base
 {
+    private const RESOURCE = 'Artwork';
+
     /** @test */
     public function fetch()
     {
-        $response = $this->client->artwork()->fetch();
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $response = $client->artwork()->fetch();
         $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
 
         $data = $response->getData();
@@ -21,7 +26,9 @@ class ArtworkTest extends Base
     /** @test */
     public function fields()
     {
-        $data = $this->client->artwork()->fetch('fields checksum, game;')->getData();
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $data = $client->artwork()->fetch('fields checksum, game;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
@@ -32,13 +39,17 @@ class ArtworkTest extends Base
     /** @test */
     public function where()
     {
-        $data = $this->client->artwork()->fetch('where id = (5305, 5307);')->getData();
-        $this->assertEquals([['id' => 5305], ['id' => 5307]], $data);
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $data = $client->artwork()->fetch('where id = (100, 200);')->getData();
+        $this->assertEquals([['id' => 100], ['id' => 200]], $data);
     }
 
     /** @test */
     public function limit()
     {
-        $this->assertCount(2, $this->client->artwork()->fetch('limit 2;')->getData());
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $this->assertCount(2, $client->artwork()->fetch('limit 2;')->getData());
     }
 }
