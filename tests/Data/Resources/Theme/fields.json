@@ -1,0 +1,52 @@
+[
+  {
+    "id": 20,
+    "name": "Thriller",
+    "checksum": "4ebeaa43-4165-5d23-142a-9bb2a26c7024"
+  },
+  {
+    "id": 18,
+    "name": "Science fiction",
+    "checksum": "fffad274-fee4-e195-eb78-72b2a35d643e"
+  },
+  {
+    "id": 1,
+    "name": "Action",
+    "checksum": "c177e0ff-f29a-2a2e-fce5-f945258ceb59"
+  },
+  {
+    "id": 19,
+    "name": "Horror",
+    "checksum": "28762ccf-724f-56cf-3784-dbf16dfcf174"
+  },
+  {
+    "id": 21,
+    "name": "Survival",
+    "checksum": "01d5251e-746d-d9b6-6a47-99e8e9fda8ff"
+  },
+  {
+    "id": 17,
+    "name": "Fantasy",
+    "checksum": "454bdc25-3dbf-5648-1e11-fc67ffc893aa"
+  },
+  {
+    "id": 22,
+    "name": "Historical",
+    "checksum": "1256e1bd-db05-276a-16ad-9704f7a56dcc"
+  },
+  {
+    "id": 23,
+    "name": "Stealth",
+    "checksum": "6c0cc20c-b7fc-0007-8ae0-4cc91301e9f1"
+  },
+  {
+    "id": 27,
+    "name": "Comedy",
+    "checksum": "2d128835-a3c1-7979-d561-005e651ada8e"
+  },
+  {
+    "id": 28,
+    "name": "Business",
+    "checksum": "b088a483-b1e9-685b-dbfb-4e37b58ef69d"
+  }
+]

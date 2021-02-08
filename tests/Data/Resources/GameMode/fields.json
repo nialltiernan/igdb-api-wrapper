@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.igdb.com/game_modes/single-player",
+    "checksum": "a43b1688-f968-3541-0897-9735ffde1745"
+  },
+  {
+    "id": 2,
+    "url": "https://www.igdb.com/game_modes/multiplayer",
+    "checksum": "288b548c-11e4-d910-f037-21d4e6a33b38"
+  },
+  {
+    "id": 3,
+    "url": "https://www.igdb.com/game_modes/co-operative",
+    "checksum": "e8329d55-33e6-f7ae-ae09-2848cb7ccc90"
+  },
+  {
+    "id": 4,
+    "url": "https://www.igdb.com/game_modes/split-screen",
+    "checksum": "98247b75-6f46-7c77-521f-0945c684d842"
+  },
+  {
+    "id": 5,
+    "url": "https://www.igdb.com/game_modes/massively-multiplayer-online-mmo",
+    "checksum": "307d1126-6e3b-9215-06f1-10c8ecce05b4"
+  },
+  {
+    "id": 6,
+    "url": "https://www.igdb.com/game_modes/battle-royale",
+    "checksum": "bfc388ac-0502-ba05-af25-3dcc94a0acf3"
+  }
+]

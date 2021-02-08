@@ -1,0 +1,52 @@
+[
+  {
+    "id": 103,
+    "url": "https://www.igdb.com/platforms/cpet/version/initial-version",
+    "checksum": "df0a5020-309d-04c9-5368-b2b9244bb6b4"
+  },
+  {
+    "id": 19,
+    "url": "https://www.igdb.com/platforms/amiga/version/amiga-a-500",
+    "checksum": "8be75330-7847-49d4-7812-cae1b58d8e63"
+  },
+  {
+    "id": 282,
+    "url": "https://www.igdb.com/platforms/switch/version/switch-lite",
+    "checksum": "24097bf5-9bbf-5959-931b-4b87ece75fb8"
+  },
+  {
+    "id": 456,
+    "url": "https://www.igdb.com/platforms/sega-pico/version/initial-version",
+    "checksum": "73850f31-1fb1-9cb7-0bd8-f41ffdccfba3"
+  },
+  {
+    "id": 139,
+    "url": "https://www.igdb.com/platforms/snes--1/version/super-famicom-shvc-001",
+    "checksum": "3fcc6ae9-ac67-dc57-a433-780e25ee615f"
+  },
+  {
+    "id": 164,
+    "url": "https://www.igdb.com/platforms/trs-80/version/initial-version",
+    "checksum": "93cf119c-a0d5-5de9-fcaa-4692e0bd605c"
+  },
+  {
+    "id": 222,
+    "url": "https://www.igdb.com/platforms/nec-pc-6000-series/version/initial-version",
+    "checksum": "a4ae254e-b95b-ec66-9c68-a55026361c04"
+  },
+  {
+    "id": 283,
+    "url": "https://www.igdb.com/platforms/wii/version/wii-mini",
+    "checksum": "f5adf622-be04-e3ef-278e-bee6e383a1b1"
+  },
+  {
+    "id": 51,
+    "url": "https://www.igdb.com/platforms/n64/version/initial-version-4369dd46-1ced-49c7-85f2-7f5c28d72be5",
+    "checksum": "805e01e1-1a8b-7ccd-b0fb-42d4d9cf0eb9"
+  },
+  {
+    "id": 284,
+    "url": "https://www.igdb.com/platforms/xbox-series-x/version/xbox-series-x",
+    "checksum": "49c3532d-2977-925c-4670-c654a3303e76"
+  }
+]

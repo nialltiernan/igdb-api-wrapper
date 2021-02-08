@@ -1,0 +1,52 @@
+[
+  {
+    "id": 158,
+    "name": "Commodore CDTV",
+    "checksum": "5d48648e-283c-e2df-df7d-6d3cbc7e0a58"
+  },
+  {
+    "id": 339,
+    "name": "Sega Pico",
+    "checksum": "6e867a5b-a071-fc7b-945b-a0622f64a4bc"
+  },
+  {
+    "id": 8,
+    "name": "PlayStation 2",
+    "checksum": "be3e025c-d4ed-b795-443c-a8cb55fbfe17"
+  },
+  {
+    "id": 39,
+    "name": "iOS",
+    "checksum": "fefe4a2b-7c90-0e89-e811-902ea1cf2b58"
+  },
+  {
+    "id": 94,
+    "name": "Commodore Plus/4",
+    "checksum": "ea138789-6bbe-bcca-dff5-7e20e762f65a"
+  },
+  {
+    "id": 144,
+    "name": "AY-3-8710",
+    "checksum": "5438ffcf-1f05-47e9-e082-15bafd1dc92f"
+  },
+  {
+    "id": 88,
+    "name": "Odyssey",
+    "checksum": "26859452-7553-fa16-0833-3a62209ac679"
+  },
+  {
+    "id": 90,
+    "name": "Commodore PET",
+    "checksum": "2fa2cd86-55c7-cfa7-9569-e8f0422c8d0b"
+  },
+  {
+    "id": 237,
+    "name": "Sol-20",
+    "checksum": "c608e02f-1a92-d010-b161-4a368220bdfe"
+  },
+  {
+    "id": 6,
+    "name": "PC (Microsoft Windows)",
+    "checksum": "5aae54d0-390e-a4ec-a9ee-4ad4cc346992"
+  }
+]

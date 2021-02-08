@@ -14,7 +14,7 @@ class AgeRatingTest extends Base
     /** @test */
     public function fetch()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $response = $client->ageRatings()->fetch();
         $data = $response->getData();
@@ -26,7 +26,7 @@ class AgeRatingTest extends Base
     /** @test */
     public function fields()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $data = $client->ageRatings()->fetch('fields checksum, category;')->getData();
 
@@ -39,7 +39,7 @@ class AgeRatingTest extends Base
     /** @test */
     public function where()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $data = $client->ageRatings()->fetch('where id = (25, 26);')->getData();
 
@@ -49,7 +49,7 @@ class AgeRatingTest extends Base
     /** @test */
     public function limit()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $this->assertCount(2, $client->ageRatings()->fetch('limit 2;')->getData());
     }

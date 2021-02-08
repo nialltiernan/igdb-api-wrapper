@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "First person",
+    "checksum": "4e23cb22-7a70-effb-b8e1-151317c6cdbd"
+  },
+  {
+    "id": 2,
+    "name": "Third person",
+    "checksum": "2788b856-580c-66d0-bef3-d6169034f175"
+  },
+  {
+    "id": 3,
+    "name": "Bird view / Isometric",
+    "checksum": "83c59132-6edd-150f-a25f-a86ddf6a0da3"
+  },
+  {
+    "id": 5,
+    "name": "Text",
+    "checksum": "e2df3906-bca8-e0d1-ca3b-67e1c5cfb334"
+  },
+  {
+    "id": 4,
+    "name": "Side view",
+    "checksum": "2d038ac6-36c5-af5b-83fd-11a88a638631"
+  },
+  {
+    "id": 7,
+    "name": "Virtual Reality",
+    "checksum": "963f8a54-d40f-1c9d-3bf4-d15267043693"
+  },
+  {
+    "id": 6,
+    "name": "Auditory",
+    "checksum": "74528cf1-64c3-cd78-18df-fae1594ee664"
+  }
+]

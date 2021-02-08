@@ -40,7 +40,7 @@ class Base extends TestCase
         return new ApiClient($config);
     }
 
-    protected function getMockedHttpClient(string $resource, string $function): HttpClient
+    protected function getMockHttpClient(string $resource, string $function): HttpClient
     {
         $mock = new MockHandler([$this->getMockResponse($resource, $function)]);
 

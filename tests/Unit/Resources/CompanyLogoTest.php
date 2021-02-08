@@ -14,7 +14,7 @@ class CompanyLogoTest extends Base
     /** @test */
     public function fetch()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $response = $client->companyLogos()->fetch();
         $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
@@ -26,7 +26,7 @@ class CompanyLogoTest extends Base
     /** @test */
     public function fields()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $data = $client->companyLogos()->fetch('fields checksum, url;')->getData();
 
@@ -39,7 +39,7 @@ class CompanyLogoTest extends Base
     /** @test */
     public function where()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $data = $client->companyLogos()->fetch('where id = (80, 90);')->getData();
 
@@ -49,7 +49,7 @@ class CompanyLogoTest extends Base
     /** @test */
     public function limit()
     {
-        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+        $client = new ApiClient($this->config, $this->getMockHttpClient(self::RESOURCE, __FUNCTION__));
 
         $this->assertCount(2, $client->companyLogos()->fetch('limit 2;')->getData());
     }
