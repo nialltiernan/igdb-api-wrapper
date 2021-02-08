@@ -44,7 +44,9 @@ class Base extends TestCase
     {
         $path = sprintf('%s/Data/Resources/%s/%s.json', __DIR__, $resource, $function);
 
-        $mock = new MockHandler([new Response(Status::HTTP_OK, ['Content-Type' => 'application/json'], file_get_contents($path))]);
+        $mock = new MockHandler(
+            [new Response(Status::HTTP_OK, ['Content-Type' => 'application/json'], file_get_contents($path))]
+        );
 
         $handlerStack = HandlerStack::create($mock);
 

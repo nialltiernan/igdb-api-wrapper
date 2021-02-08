@@ -3,25 +3,32 @@ declare(strict_types=1);
 
 namespace Igdb\Tests\Unit\Resources;
 
+use Igdb\ApiClient;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
 class AgeRatingContentDescriptionTest extends Base
 {
+    private const RESOURCE = 'AgeRatingContentDescription';
+
     /** @test */
     public function fetch()
     {
-        $response = $this->client->ageRatingsContentDescriptions()->fetch();
-        $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
+        $response = $client->ageRatingsContentDescriptions()->fetch();
         $data = $response->getData();
+
+        $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
         $this->assertIsArray($data);
     }
 
     /** @test */
     public function fields()
     {
-        $data = $this->client->ageRatingsContentDescriptions()->fetch('fields checksum, description;')->getData();
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $data = $client->ageRatingsContentDescriptions()->fetch('fields checksum, description;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
@@ -32,13 +39,18 @@ class AgeRatingContentDescriptionTest extends Base
     /** @test */
     public function where()
     {
-        $data = $this->client->ageRatingsContentDescriptions()->fetch('where id = (22474, 21120);')->getData();
-        $this->assertEquals([['id' => 21120], ['id' => 22474]], $data);
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $data = $client->ageRatingsContentDescriptions()->fetch('where id = (100, 200);')->getData();
+
+        $this->assertEquals([['id' => 100], ['id' => 200]], $data);
     }
 
     /** @test */
     public function limit()
     {
-        $this->assertCount(2, $this->client->ageRatingsContentDescriptions()->fetch('limit 2;')->getData());
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $this->assertCount(2, $client->ageRatingsContentDescriptions()->fetch('limit 2;')->getData());
     }
 }

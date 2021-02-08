@@ -3,25 +3,32 @@ declare(strict_types=1);
 
 namespace Igdb\Tests\Unit\Resources;
 
+use Igdb\ApiClient;
 use Igdb\Tests\Base;
 use Lukasoppermann\Httpstatus\Httpstatuscodes as Status;
 
 class AlternativeNamesTest extends Base
 {
+    private const RESOURCE = 'AlternativeName';
+
     /** @test */
     public function fetch()
     {
-        $response = $this->client->alternativeNames()->fetch();
-        $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
+        $response = $client->alternativeNames()->fetch();
         $data = $response->getData();
+
+        $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
         $this->assertIsArray($data);
     }
 
     /** @test */
     public function fields()
     {
-        $data = $this->client->alternativeNames()->fetch('fields checksum, name;')->getData();
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $data = $client->alternativeNames()->fetch('fields checksum, name;')->getData();
 
         foreach ($data as $datum) {
             $this->assertArrayHasKey('checksum', $datum);
@@ -32,13 +39,18 @@ class AlternativeNamesTest extends Base
     /** @test */
     public function where()
     {
-        $data = $this->client->alternativeNames()->fetch('where id = (12964, 39844);')->getData();
-        $this->assertEquals([['id' => 12964], ['id' => 39844]], $data);
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $data = $client->alternativeNames()->fetch('where id = (100, 200);')->getData();
+
+        $this->assertEquals([['id' => 100], ['id' => 200]], $data);
     }
 
     /** @test */
     public function limit()
     {
-        $this->assertCount(2, $this->client->ageRatings()->fetch('limit 2;')->getData());
+        $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
+
+        $this->assertCount(2, $client->ageRatings()->fetch('limit 2;')->getData());
     }
 }

@@ -17,9 +17,9 @@ class ArtworkTest extends Base
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
         $response = $client->artwork()->fetch();
-        $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
-
         $data = $response->getData();
+
+        $this->assertEquals(Status::HTTP_OK, $response->getResponse()->getStatusCode());
         $this->assertIsArray($data);
     }
 
@@ -42,6 +42,7 @@ class ArtworkTest extends Base
         $client = new ApiClient($this->config, $this->getMockedHttpClient(self::RESOURCE, __FUNCTION__));
 
         $data = $client->artwork()->fetch('where id = (100, 200);')->getData();
+
         $this->assertEquals([['id' => 100], ['id' => 200]], $data);
     }
 
