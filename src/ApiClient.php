@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Igdb;
 
+use GuzzleHttp\Client as HttpClient;
 use Igdb\Resources\AgeRatingContentDescriptionResource;
 use Igdb\Resources\AgeRatingResource;
 use Igdb\Resources\AlternativeNameResource;
@@ -45,199 +46,201 @@ use Igdb\Resources\WebsiteResource;
 class ApiClient
 {
     private Config $config;
+    private HttpClient $httpClient;
 
-    public function __construct(Config $config)
+    public function __construct(Config $config, HttpClient $mockedHttpClient = null)
     {
         $this->config = $config;
+        $this->httpClient = $mockedHttpClient ?? new HttpClient();
     }
 
     public function ageRatingsContentDescriptions(): AgeRatingContentDescriptionResource
     {
-        return new AgeRatingContentDescriptionResource($this->config);
+        return new AgeRatingContentDescriptionResource($this->config, $this->httpClient);
     }
 
     public function ageRatings(): AgeRatingResource
     {
-        return new AgeRatingResource($this->config);
+        return new AgeRatingResource($this->config, $this->httpClient);
     }
 
     public function alternativeNames(): AlternativeNameResource
     {
-        return new AlternativeNameResource($this->config);
+        return new AlternativeNameResource($this->config, $this->httpClient);
     }
 
     public function artwork(): ArtworkResource
     {
-        return new ArtworkResource($this->config);
+        return new ArtworkResource($this->config, $this->httpClient);
     }
 
     public function characterMugShots(): CharacterMugShotResource
     {
-        return new CharacterMugShotResource($this->config);
+        return new CharacterMugShotResource($this->config, $this->httpClient);
     }
 
     public function characters(): CharacterResource
     {
-        return new CharacterResource($this->config);
+        return new CharacterResource($this->config, $this->httpClient);
     }
 
     public function collections(): CollectionResource
     {
-        return new CollectionResource($this->config);
+        return new CollectionResource($this->config, $this->httpClient);
     }
 
     public function companyLogos(): CompanyLogoResource
     {
-        return new CompanyLogoResource($this->config);
+        return new CompanyLogoResource($this->config, $this->httpClient);
     }
 
     public function companies(): CompanyResource
     {
-        return new CompanyResource($this->config);
+        return new CompanyResource($this->config, $this->httpClient);
     }
 
     public function companyWebsites(): CompanyWebsiteResource
     {
-        return new CompanyWebsiteResource($this->config);
+        return new CompanyWebsiteResource($this->config, $this->httpClient);
     }
 
     public function covers(): CoverResource
     {
-        return new CoverResource($this->config);
+        return new CoverResource($this->config, $this->httpClient);
     }
 
     public function externalGames(): ExternalGameResource
     {
-        return new ExternalGameResource($this->config);
+        return new ExternalGameResource($this->config, $this->httpClient);
     }
 
     public function franchises(): FranchiseResource
     {
-        return new FranchiseResource($this->config);
+        return new FranchiseResource($this->config, $this->httpClient);
     }
 
     public function gameEngineLogos(): GameEngineLogoResource
     {
-        return new GameEngineLogoResource($this->config);
+        return new GameEngineLogoResource($this->config, $this->httpClient);
     }
 
     public function gameEngine(): GameEngineResource
     {
-        return new GameEngineResource($this->config);
+        return new GameEngineResource($this->config, $this->httpClient);
     }
 
     public function gameMode(): GameModeResource
     {
-        return new GameModeResource($this->config);
+        return new GameModeResource($this->config, $this->httpClient);
     }
 
     public function game(): GameResource
     {
-        return new GameResource($this->config);
+        return new GameResource($this->config, $this->httpClient);
     }
 
     public function gameVersionFeatures(): GameVersionFeatureResource
     {
-        return new GameVersionFeatureResource($this->config);
+        return new GameVersionFeatureResource($this->config, $this->httpClient);
     }
 
     public function gameVersionFeatureValues(): GameVersionFeatureValueResource
     {
-        return new GameVersionFeatureValueResource($this->config);
+        return new GameVersionFeatureValueResource($this->config, $this->httpClient);
     }
 
     public function gameVersion(): GameVersionResource
     {
-        return new GameVersionResource($this->config);
+        return new GameVersionResource($this->config, $this->httpClient);
     }
 
     public function gameVideos(): GameVideoResource
     {
-        return new GameVideoResource($this->config);
+        return new GameVideoResource($this->config, $this->httpClient);
     }
 
     public function genres(): GenreResource
     {
-        return new GenreResource($this->config);
+        return new GenreResource($this->config, $this->httpClient);
     }
 
     public function involvedCompanies(): InvolvedCompanyResource
     {
-        return new InvolvedCompanyResource($this->config);
+        return new InvolvedCompanyResource($this->config, $this->httpClient);
     }
 
     public function keywords(): KeywordResource
     {
-        return new KeywordResource($this->config);
+        return new KeywordResource($this->config, $this->httpClient);
     }
 
     public function multiplayerModes(): MultiplayerModeResource
     {
-        return new MultiplayerModeResource($this->config);
+        return new MultiplayerModeResource($this->config, $this->httpClient);
     }
 
     public function platformFamily(): PlatformFamilyResource
     {
-        return new PlatformFamilyResource($this->config);
+        return new PlatformFamilyResource($this->config, $this->httpClient);
     }
 
     public function platformLogos(): PlatformLogoResource
     {
-        return new PlatformLogoResource($this->config);
+        return new PlatformLogoResource($this->config, $this->httpClient);
     }
 
     public function platforms(): PlatformResource
     {
-        return new PlatformResource($this->config);
+        return new PlatformResource($this->config, $this->httpClient);
     }
 
     public function platformVersionCompanies(): PlatformVersionCompanyResource
     {
-        return new PlatformVersionCompanyResource($this->config);
+        return new PlatformVersionCompanyResource($this->config, $this->httpClient);
     }
 
     public function platformVersionReleaseDate(): PlatformVersionReleaseDateResource
     {
-        return new PlatformVersionReleaseDateResource($this->config);
+        return new PlatformVersionReleaseDateResource($this->config, $this->httpClient);
     }
 
     public function platformVersion(): PlatformVersionResource
     {
-        return new PlatformVersionResource($this->config);
+        return new PlatformVersionResource($this->config, $this->httpClient);
     }
 
     public function platformWebsite(): PlatformWebsiteResource
     {
-        return new PlatformWebsiteResource($this->config);
+        return new PlatformWebsiteResource($this->config, $this->httpClient);
     }
 
     public function playerPerspective(): PlayerPerspectiveResource
     {
-        return new PlayerPerspectiveResource($this->config);
+        return new PlayerPerspectiveResource($this->config, $this->httpClient);
     }
 
     public function releaseDate(): ReleaseDateResource
     {
-        return new ReleaseDateResource($this->config);
+        return new ReleaseDateResource($this->config, $this->httpClient);
     }
 
     public function screenshots(): ScreenshotResource
     {
-        return new ScreenshotResource($this->config);
+        return new ScreenshotResource($this->config, $this->httpClient);
     }
 
     public function search(): SearchResource
     {
-        return new SearchResource($this->config);
+        return new SearchResource($this->config, $this->httpClient);
     }
 
     public function themes(): ThemeResource
     {
-        return new ThemeResource($this->config);
+        return new ThemeResource($this->config, $this->httpClient);
     }
 
     public function websites(): WebsiteResource
     {
-        return new WebsiteResource($this->config);
+        return new WebsiteResource($this->config, $this->httpClient);
     }
 }

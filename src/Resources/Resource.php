@@ -12,12 +12,12 @@ use Igdb\Response;
 abstract class Resource
 {
     private Config $config;
-    private HttpClient $http;
+    private HttpClient $httpClient;
 
-    public function __construct(Config $config)
+    public function __construct(Config $config, HttpClient $httpClient)
     {
         $this->config = $config;
-        $this->http = new HttpClient();
+        $this->httpClient = $httpClient;
     }
 
     /**
@@ -31,7 +31,7 @@ abstract class Resource
         $fullUrl = $this->config->getBaseUrl() . $path;
 
         try {
-            $response = $this->http->request('POST', $fullUrl, [
+            $response = $this->httpClient->request('POST', $fullUrl, [
                 'headers' => [
                     'Authorization' => $this->config->getAuthorization(),
                     'Client-ID' => $this->config->getClientId()
