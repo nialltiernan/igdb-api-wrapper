@@ -4,7 +4,7 @@ This is a PHP wrapper for v4 of the [IGDB API](https://api-docs.igdb.com/#about)
 ## Basic installation
 You can install this package via composer using:
 ```shell
-composer require nellyt/idgb-api-wrapper
+composer require nellyt/igdb-api-wrapper
 ```
 
 ## Usage

@@ -1,7 +1,7 @@
 {
-    "name": "nellyt/idgb-api-wrapper",
+    "name": "nellyt/igdb-api-wrapper",
     "description": "Wrapper for IGDB API v4",
-    "keywords": ["idgb", "api-wrapper"],
+    "keywords": ["igdb", "api-wrapper"],
     "type": "library",
     "license": "MIT",
     "authors": [
