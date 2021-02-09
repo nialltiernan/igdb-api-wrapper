@@ -1,11 +1,7 @@
 {
-    "name": "nellyt/idgb-api-sdk",
-    "description": "Library for interfacing with the IGDB API",
-    "keywords": [
-        "php",
-        "idgb",
-        "sdk"
-    ],
+    "name": "nellyt/idgb-api-wrapper",
+    "description": "Wrapper for IGDB API v4",
+    "keywords": ["idgb", "api-wrapper"],
     "type": "library",
     "license": "MIT",
     "authors": [
