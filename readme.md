@@ -1,4 +1,9 @@
 # Wrapper for IGDB API v4
+[![Latest Stable Version](https://poser.pugx.org/nellyt/igdb-api-wrapper/v)](//packagist.org/packages/nellyt/igdb-api-wrapper)
+[![Total Downloads](https://poser.pugx.org/nellyt/igdb-api-wrapper/downloads)](//packagist.org/packages/nellyt/igdb-api-wrapper)
+[![Latest Unstable Version](https://poser.pugx.org/nellyt/igdb-api-wrapper/v/unstable)](//packagist.org/packages/nellyt/igdb-api-wrapper)
+[![License](https://poser.pugx.org/nellyt/igdb-api-wrapper/license)](//packagist.org/packages/nellyt/igdb-api-wrapper)
+
 This is a PHP wrapper for v4 of the [IGDB API](https://api-docs.igdb.com/#about)
 
 ## Basic installation
