@@ -21,7 +21,7 @@ $response->getResponse()->getStatusCode();
 $response->getData();
 ```
 
-###Resources
+### Resources
 There are resources for each API endpoint. Here is the list of available resources
 1. AgeRating
 2. AgeRatingContentDescription
